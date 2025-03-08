@@ -1,10 +1,10 @@
-# Todo App using useState only (React + Vite)
+# Todo App using useState and useEffect (React + Vite)
 
 ## Overview
 
-![Todo App Screenshot](https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/01-useState/Screenshot%202025-03-08%20141050.png)
+![Cryptocurrency Price Tracker App Screenshot](https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/01-useState/Screenshot%202025-03-08%20141050.png)
 
-A simple React todo app for adding, listing, and managing tasks. It keeps things straightforward by using only useState for state management—no extra libraries or complex setups.
+This is a Cryptocurrency Price Tracker built with React, using useState and useEffect for state management and data fetching. It fetches real-time market data from the CoinGecko API and allows users to view prices in their selected currency.
 
 ## Clone the Repository
 
