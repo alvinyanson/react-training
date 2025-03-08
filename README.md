@@ -1,12 +1,23 @@
-# React + Vite
+# Todo App using useState only (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+![Todo App Screenshot](https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/01-useState/Screenshot%202025-03-08%20141050.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A simple React todo app for adding, listing, and managing tasks. It keeps things straightforward by using only useState for state management—no extra libraries or complex setups.
 
-## Expanding the ESLint configuration
+## Clone the Repository
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Open your terminal and run the following command to clone the repository:
+
+    git clone https://github.com/alvinyanson/react-training
+
+
+## Run the app
+
+After cloning the repository, navigate to the project directory and run the following command in the terminal.
+
+    npm run install
+
+    npm run dev
+
