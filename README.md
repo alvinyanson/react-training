@@ -1,4 +1,4 @@
-# Todo App using useState and useEffect (React + Vite)
+# Cryptocurrency Price Tracker App using useState and useEffect (React + Vite)
 
 ## Overview
 
