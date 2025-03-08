@@ -2,7 +2,7 @@
 
 ## Overview
 
-![Cryptocurrency Price Tracker App Screenshot](https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/01-useState/Screenshot%202025-03-08%20141050.png)
+![Cryptocurrency Price Tracker App Screenshot](https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/02-useEffect/Screenshot%202025-03-08%20161240.png)
 
 This is a Cryptocurrency Price Tracker built with React, using useState and useEffect for state management and data fetching. It fetches real-time market data from the CoinGecko API and allows users to view prices in their selected currency.
 
