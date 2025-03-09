@@ -1,4 +1,4 @@
-# Expense Tracker App using useState and useEffect (React + Vite)
+# Expense Tracker App using useContext and useReducer (React + Vite)
 
 ## Overview
 
