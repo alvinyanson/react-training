@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import { useExpenseDispatch } from "../context/ExpenseTrackerContext";
+import { AccountsList, CategoryList, RecordType } from '../util';
 
 function AddRecordForm() {
     const dispatch = useExpenseDispatch()
 
     const [record, setRecord] = useState({
-        type: '',
-        account: '',
+        type: RecordType[0].name,
+        account: AccountsList[0].name,
         amount: '',
-        category: '',
+        category: CategoryList[0].name,
         date: ''
     })
 
@@ -18,32 +19,51 @@ function AddRecordForm() {
         dispatch({ type: 'add_record', record })
     }
 
+    const handleChangeType = (e) => {
+        setRecord({
+            ...record,
+            type: e.target.value
+        })
+    }
+
+    const handleChangeAccount = (e) => {
+        setRecord({
+            ...record,
+            account: e.target.value
+        })
+    }
+
+    const handleChangeCategory = (e) => {
+        setRecord({
+            ...record,
+            category: e.target.value
+        })
+    }
+
     return (
         <>
             <div className='card'>
                 <div className='card-body'>
                     <div className="mb-3">
                         <label className="form-label">Type</label>
-                        <input type="text" className="form-control"
-                            value={record.type}
-                            onChange={e => {
-                                setRecord({
-                                    ...record,
-                                    type: e.target.value
-                                });
-                            }} />
+                        <select className="form-select" onChange={handleChangeType}>
+                            {
+                                RecordType.map(record => (
+                                    <option key={record.id}>{record.name}</option>
+                                ))
+                            }
+                        </select>
                     </div>
 
                     <div className="mb-3">
                         <label className="form-label">Account</label>
-                        <input type="text" className="form-control"
-                            value={record.account}
-                            onChange={e => {
-                                setRecord({
-                                    ...record,
-                                    account: e.target.value
-                                });
-                            }} />
+                        <select className="form-select" onChange={handleChangeAccount}>
+                            {
+                                AccountsList.map(record => (
+                                    <option key={record.id}>{record.name}</option>
+                                ))
+                            }
+                        </select>
                     </div>
 
                     <div className="mb-3">
@@ -60,14 +80,13 @@ function AddRecordForm() {
 
                     <div className="mb-3">
                         <label className="form-label">Category</label>
-                        <input type="text" className="form-control"
-                            value={record.category}
-                            onChange={e => {
-                                setRecord({
-                                    ...record,
-                                    category: e.target.value
-                                });
-                            }} />
+                        <select className="form-select" onChange={handleChangeCategory}>
+                            {
+                                CategoryList.map(record => (
+                                    <option key={record.id}>{record.name}</option>
+                                ))
+                            }
+                        </select>
                     </div>
 
                     <div className="mb-3">

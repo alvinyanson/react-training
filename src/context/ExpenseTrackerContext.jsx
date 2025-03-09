@@ -1,5 +1,6 @@
 import { createContext, useReducer, useContext } from "react";
 import { expenseTrackerReducer } from "./expenseTrackerReducer";
+import { AccountsList } from "../util";
 
 const ExpenseTrackerContext = createContext(null);
 
@@ -16,7 +17,7 @@ export function useExpenseDispatch() {
 export function RecordsProvider({ children }) {
     const [records, dispatch] = useReducer(
         expenseTrackerReducer,
-        { records: [] }
+        { records: [], accounts: AccountsList }
     );
 
     return (
