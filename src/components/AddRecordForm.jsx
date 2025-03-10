@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useExpenseDispatch } from "../context/ExpenseTrackerContext";
-import { AccountsList, CategoryList, RecordType } from '../util';
+import { useExpenseDispatch } from "../context/ExpenseContext";
+import { AccountsList, CategoryList, RecordType } from '../data';
 
 function AddRecordForm() {
     const dispatch = useExpenseDispatch()
@@ -10,7 +10,7 @@ function AddRecordForm() {
         account: AccountsList[0].name,
         amount: '',
         category: CategoryList[0].name,
-        date: ''
+        date: new Date().toISOString().split("T")[0]
     })
 
     const handleSubmitForm = () => {
@@ -44,6 +44,7 @@ function AddRecordForm() {
         <>
             <div className='card'>
                 <div className='card-body'>
+                    <h5 class="card-title">Add Record</h5>
                     <div className="mb-3">
                         <label className="form-label">Type</label>
                         <select className="form-select" onChange={handleChangeType}>

@@ -1,4 +1,4 @@
-import { useExpense } from "../context/ExpenseTrackerContext";
+import { useExpense } from "../context/ExpenseContext";
 
 function Accounts() {
     const state = useExpense();
@@ -7,7 +7,7 @@ function Accounts() {
         <>
             {
                 state.accounts.map(account => (
-                    <div key={account.id} className="col-md-4 col-12">
+                    <div key={account.id} className="col-md-3 col-12">
                         <div className="card">
                             <div className="card-body">
                                 <h5 className="card-title">{account.name}</h5>

@@ -1,7 +1,7 @@
 import Accounts from './components/Accounts';
 import AddRecordForm from './components/AddRecordForm';
 import RecordsList from './components/RecordsList';
-import { RecordsProvider } from "./context/ExpenseTrackerContext"
+import { RecordsProvider } from "./context/ExpenseContext"
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   return (
     <RecordsProvider>
       <div className="container py-5 py-2">
-        <div className='row'>
+        <div className='row mb-4'>
           <Accounts />
 
         </div>

@@ -1,18 +1,10 @@
 import { createContext, useReducer, useContext } from "react";
-import { expenseTrackerReducer } from "./expenseTrackerReducer";
-import { AccountsList } from "../util";
+import { expenseTrackerReducer } from "./expense.reducer";
+import { AccountsList } from "../data";
 
-const ExpenseTrackerContext = createContext(null);
+const ExpenseContext = createContext(null);
 
 const ExpenseTrackerDispatchContext = createContext(null);
-
-export function useExpense() {
-    return useContext(ExpenseTrackerContext);
-}
-
-export function useExpenseDispatch() {
-    return useContext(ExpenseTrackerDispatchContext);
-}
 
 export function RecordsProvider({ children }) {
     const [records, dispatch] = useReducer(
@@ -21,10 +13,14 @@ export function RecordsProvider({ children }) {
     );
 
     return (
-        <ExpenseTrackerContext.Provider value={records}>
+        <ExpenseContext.Provider value={records}>
             <ExpenseTrackerDispatchContext.Provider value={dispatch}>
                 {children}
             </ExpenseTrackerDispatchContext.Provider>
-        </ExpenseTrackerContext.Provider>
+        </ExpenseContext.Provider>
     );
 }
+
+export const useExpense = () => useContext(ExpenseContext);
+
+export const useExpenseDispatch = () => useContext(ExpenseTrackerDispatchContext);
