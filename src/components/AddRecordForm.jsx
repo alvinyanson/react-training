@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useExpenseDispatch } from "../context/ExpenseContext";
 import { AccountsList, CategoryList, RecordType } from '../data';
+import { v4 as uuidv4 } from 'uuid';
 
 function AddRecordForm() {
     const dispatch = useExpenseDispatch()
@@ -15,6 +16,8 @@ function AddRecordForm() {
 
     const handleSubmitForm = () => {
         console.log('record', record);
+
+        record.id = uuidv4();
 
         dispatch({ type: 'add_record', record })
     }
@@ -44,7 +47,7 @@ function AddRecordForm() {
         <>
             <div className='card'>
                 <div className='card-body'>
-                    <h5 class="card-title">Add Record</h5>
+                    <h5 className="card-title">Add Record</h5>
                     <div className="mb-3">
                         <label className="form-label">Type</label>
                         <select className="form-select" onChange={handleChangeType}>

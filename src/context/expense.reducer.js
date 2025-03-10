@@ -20,6 +20,21 @@ export function expenseTrackerReducer(state, action) {
                 accounts: updatedAccounts // Update accounts balance
             };
         }
+
+        case 'delete_record': {
+
+            const records = state.records.filter(record => record.id !== action.record.id);
+
+            const updatedAccounts = state.accounts.map(account =>
+                account.name === action.record.account
+                    ? { ...account, balance: account.balance + Number(action.record.amount) }
+                    : account
+            );
+
+            return { ...state, records, accounts: updatedAccounts };
+        }
+
+
         default: {
             throw Error('Unknown action: ' + action.type);
         }
