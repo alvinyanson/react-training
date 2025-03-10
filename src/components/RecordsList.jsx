@@ -7,8 +7,12 @@ function RecordsList() {
 
 
     const handleDelete = (record) => {
-
         dispatch({ type: "delete_record", record })
+    }
+
+    const handleEdit = (record) => {
+        record.action = "edit";
+        dispatch({ type: "set_form", record })
     }
     return (
         <>
@@ -37,7 +41,7 @@ function RecordsList() {
                                         <td>{record.date}</td>
                                         <td>
                                             <div className="btn-group" role="group" aria-label="Basic example">
-                                                <button type="button" className="btn btn-light">Edit</button>
+                                                <button onClick={() => handleEdit(record)} className="btn btn-light">Edit</button>
                                                 <button onClick={() => handleDelete(record)} className="btn btn-dark">Delete</button>
                                             </div>
                                         </td>
