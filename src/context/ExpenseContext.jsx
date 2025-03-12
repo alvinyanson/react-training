@@ -1,6 +1,6 @@
 import { createContext, useReducer, useContext } from "react";
 import { expenseTrackerReducer } from "./expense.reducer";
-import { AccountsList, CategoryList, RecordType } from "../data";
+import { AccountsList, CategoryList, DummyRecords, RecordType } from "../data";
 
 const ExpenseContext = createContext(null);
 
@@ -10,7 +10,7 @@ export function RecordsProvider({ children }) {
     const [records, dispatch] = useReducer(
         expenseTrackerReducer,
         {
-            records: [],
+            records: DummyRecords,
             accounts: AccountsList,
             form: {
                 action: "add",

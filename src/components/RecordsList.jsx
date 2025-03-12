@@ -7,6 +7,8 @@ function RecordsList() {
     const state = useExpense();
     const dispatch = useExpenseDispatch();
 
+    console.log('state', state.records);
+
     const handleDelete = (record) => {
         dispatch({ type: "delete_record", record })
     }
@@ -15,7 +17,7 @@ function RecordsList() {
         record.action = "edit";
         dispatch({ type: "set_form", record })
     }
-    
+
     return (
         <>
             <div className="card mb-4">

@@ -81,3 +81,52 @@ export const CategoryList = [
         name: "Others"
     },
 ]
+
+
+export const DummyRecords = [
+    {
+        "action": "add",
+        "type": "Expense",
+        "account": "Cash",
+        "amount": "100",
+        "category": "Food & Beverages",
+        "date": "2025-03-12",
+        "id": "fe2e4a05-a58f-4a9d-bf9c-eb9c357098e7"
+    },
+    {
+        "action": "add",
+        "type": "Expense",
+        "account": "Cash",
+        "amount": "100",
+        "category": "Shopping",
+        "date": "2025-03-12",
+        "id": "5e5d88e4-c9f2-4710-8c5f-5caf04757a9c"
+    },
+    {
+        "action": "add",
+        "type": "Expense",
+        "account": "Cash",
+        "amount": "100",
+        "category": "Housing",
+        "date": "2025-03-12",
+        "id": "bc632ca3-9ce0-4a9b-a626-9870afbea778"
+    },
+    {
+        "action": "add",
+        "type": "Expense",
+        "account": "Cash",
+        "amount": "100",
+        "category": "Transportation",
+        "date": "2025-03-12",
+        "id": "768522be-2024-4085-8da1-c8a1a0d2bb45"
+    },
+    {
+        "action": "add",
+        "type": "Expense",
+        "account": "Cash",
+        "amount": "100",
+        "category": "Vehicle",
+        "date": "2025-03-12",
+        "id": "265ddbc9-7266-4900-870b-65e360a01c2c"
+    }
+]
