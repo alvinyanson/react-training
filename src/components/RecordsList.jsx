@@ -1,10 +1,11 @@
 import { useExpense, useExpenseDispatch } from "../context/ExpenseContext";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 function RecordsList() {
     const state = useExpense();
     const dispatch = useExpenseDispatch();
-
 
     const handleDelete = (record) => {
         dispatch({ type: "delete_record", record })
@@ -16,7 +17,7 @@ function RecordsList() {
     }
     return (
         <>
-            <div className="card">
+            <div className="card mb-4">
                 <div className="card-body">
                     <h5 className="card-title">Records</h5>
                     <table className="table">
@@ -53,6 +54,8 @@ function RecordsList() {
                     </table>
                 </div>
             </div>
+
+            
         </>
     )
 }

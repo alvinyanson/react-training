@@ -1,5 +1,6 @@
 import Accounts from './components/Accounts';
 import AddRecordForm from './components/AddRecordForm';
+import ChartOverviewByCategory from './components/ChartOverviewByCategory';
 import RecordsList from './components/RecordsList';
 import { RecordsProvider } from "./context/ExpenseContext"
 
@@ -19,6 +20,7 @@ function App() {
           </div>
           <div className='col-md-8 col-12'>
             <RecordsList />
+            <ChartOverviewByCategory/>
           </div>
         </div>
       </div >

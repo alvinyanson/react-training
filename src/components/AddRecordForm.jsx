@@ -19,8 +19,9 @@ function AddRecordForm() {
         console.log('record', record);
 
         if (record.action === "add") {
-            record.id = uuidv4();
-            dispatch({ type: 'add_record', record })
+            const newRecord = { ...record, id: uuidv4() };
+            dispatch({ type: 'add_record', record: newRecord })
+            setRecord(newRecord);
             return;
         }
 
@@ -56,7 +57,6 @@ function AddRecordForm() {
                     <div className="mb-3">
                         <label className="form-label">Type</label>
                         <select className="form-select" onChange={handleChangeType} value={record.type}>
-                            <option selected disabled>Select</option>
                             {
                                 RecordType.map(record => (
                                     <option key={record.id}>{record.name}</option>
