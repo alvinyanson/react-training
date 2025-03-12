@@ -15,6 +15,7 @@ function RecordsList() {
         record.action = "edit";
         dispatch({ type: "set_form", record })
     }
+    
     return (
         <>
             <div className="card mb-4">
@@ -49,13 +50,10 @@ function RecordsList() {
                                     </tr>
                                 ))
                             }
-
                         </tbody>
                     </table>
                 </div>
             </div>
-
-            
         </>
     )
 }

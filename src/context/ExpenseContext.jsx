@@ -14,10 +14,10 @@ export function RecordsProvider({ children }) {
             accounts: AccountsList,
             form: {
                 action: "add",
-                type: '',
-                account: '',
+                type: RecordType[0].name,
+                account: AccountsList[0].name,
                 amount: '',
-                category: '',
+                category: CategoryList[0].name,
                 date: new Date().toISOString().split("T")[0]
             }
         }

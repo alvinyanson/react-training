@@ -12,11 +12,14 @@ function AddRecordForm() {
     })
 
     useEffect(() => {
-        setRecord(state.form); // Sync with global state
-    }, [state.form]); // Runs whenever `state.form` changes
+        setRecord(state.form);
+    }, [state.form]);
 
     const handleSubmitForm = () => {
-        console.log('record', record);
+        if (!record.amount) {
+            alert('Amount is required');
+            return;
+        }
 
         if (record.action === "add") {
             const newRecord = { ...record, id: uuidv4() };
@@ -110,7 +113,6 @@ function AddRecordForm() {
                                 });
                             }} />
                     </div>
-
 
                     <button className="btn btn-dark" onClick={handleSubmitForm}>Add Record</button>
                 </div>
