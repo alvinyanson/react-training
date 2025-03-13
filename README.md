@@ -2,7 +2,7 @@
 
 ## Overview
 
-![Contacts App Screenshot](https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/03-useReducer-useContext/Screenshot%202025-03-12%20095720.png)
+![Contacts App Screenshot](https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/04-react-router-contacts-app/Screenshot%202025-03-13%20114946.png)
 
 A contact management app built with React Router v7, following the tutorial in the React Router documentation, that lets users add, edit, delete, and search for contacts.
 
