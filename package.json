@@ -1,7 +1,7 @@
 {
-  "name": "react-training",
+  "name": "contacts-app",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,11 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "chart.js": "^4.4.8",
+    "localforage": "^1.10.0",
+    "match-sorter": "^8.0.0",
     "react": "^19.0.0",
-    "react-chartjs-2": "^5.3.0",
     "react-dom": "^19.0.0",
-    "uuid": "^11.1.0"
+    "react-router-dom": "^7.3.0",
+    "sort-by": "^1.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
