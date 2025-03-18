@@ -1,25 +1,17 @@
 import { create } from 'zustand';
 import { Product } from '../types/product';
 import { CartItem } from '../types/cart.item';
+import { CartState } from './cart.state';
 
-type CartState = {
-  cartItems: CartItem[];
-  actions: {
-    addToCart: (product: Product) => void;
-    increaseQty: (cartItem: CartItem) => void;
-    decreaseQty: (cartItem: CartItem) => void;
-    removeFromCart: (cartItem: CartItem) => void;
-    checkout: () => void;
-  };
-};
-
+// the cart store, not exported, so that no one can subscribe to the entire store
 const useCartStore = create<CartState>((set) => ({
   cartItems: [],
   actions: {
     addToCart: (product: Product) =>
       set((state) => ({
         cartItems: state.cartItems.some((item) => item.id === product.id)
-          ? state.cartItems.map((item) => {
+          ? // item already exist in cart, just update qty
+            state.cartItems.map((item) => {
               if (item.id === product.id) {
                 return {
                   id: product.id,
@@ -32,7 +24,8 @@ const useCartStore = create<CartState>((set) => ({
               }
               return item;
             })
-          : [
+          : // new item added to cart
+            [
               ...state.cartItems,
               {
                 id: product.id,
@@ -75,6 +68,7 @@ const useCartStore = create<CartState>((set) => ({
   },
 }));
 
+// exported - consumers don't need to write selectors
 export const useCartItems = () => useCartStore((state) => state.cartItems);
 
 export const useCartActions = () => useCartStore((state) => state.actions);

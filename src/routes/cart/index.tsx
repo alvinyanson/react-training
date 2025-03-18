@@ -42,6 +42,7 @@ function RouteComponent() {
           </tr>
         </thead>
         <tbody>
+          {/* product info in cart */}
           {cartItems.map((item, index) => (
             <tr key={item.name}>
               <th scope="row">{index + 1}</th>
@@ -92,15 +93,18 @@ function RouteComponent() {
               </td>
             </tr>
           ))}
+
           <tr>
             {cartItems.length > 0 ? (
               <>
+                {/* total price of the cart */}
                 <td colSpan={7} className="text-end">
                   <h4>{formatNumberWithCommas(totalPrice)}</h4>
                 </td>
                 <td></td>
               </>
             ) : (
+              // cart is empty
               <td colSpan={8} className="text-center">
                 <span>Cart is empty</span>
               </td>
@@ -110,6 +114,7 @@ function RouteComponent() {
         </tbody>
       </table>
 
+      {/* checkout button */}
       {cartItems.length > 0 && (
         <>
           <br />
