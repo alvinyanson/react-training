@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useCartActions, useCartItems } from '../../stores/cart.store';
 import { formatNumberWithCommas } from '../../util';
+import { useMemo } from 'react';
 
 export const Route = createFileRoute('/cart/')({
   component: RouteComponent,
@@ -8,7 +9,21 @@ export const Route = createFileRoute('/cart/')({
 
 function RouteComponent() {
   const cartItems = useCartItems();
-  const { increaseQty, decreaseQty, removeFromCart } = useCartActions();
+
+  const { increaseQty, decreaseQty, removeFromCart, checkout } =
+    useCartActions();
+
+  const totalPrice = useMemo(
+    () =>
+      cartItems.reduce((total, item) => total + item.quantity * item.price, 0),
+    [cartItems]
+  );
+
+  const handleCheckout = () => {
+    if (confirm('Confirm checkout?')) {
+      checkout();
+    }
+  };
 
   return (
     <>
@@ -79,14 +94,7 @@ function RouteComponent() {
           ))}
           <tr>
             <td colSpan={7} className="text-end">
-              <h4>
-                {formatNumberWithCommas(
-                  cartItems.reduce(
-                    (total, item) => total + item.quantity * item.price,
-                    0
-                  )
-                )}
-              </h4>
+              <h4>{formatNumberWithCommas(totalPrice)}</h4>
             </td>
             <td></td>
           </tr>
@@ -94,7 +102,9 @@ function RouteComponent() {
       </table>
 
       <br />
-      <button className="btn btn-dark">Checkout</button>
+      <button onClick={() => handleCheckout()} className="btn btn-dark">
+        Checkout
+      </button>
     </>
   );
 }

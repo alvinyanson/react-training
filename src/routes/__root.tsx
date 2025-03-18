@@ -13,9 +13,9 @@ function RootComponent() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Shopping App
-          </a>
+          <Link to="/">
+            <span className="navbar-brand">Shopping App</span>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -33,7 +33,12 @@ function RootComponent() {
                 <span className="nav-link">Home</span>
               </Link>
               <Link to="/cart" className="nav-item">
-                <span className="nav-link">Cart {cartItems.length || 0}</span>
+                <span className="nav-link">
+                  Cart{' '}
+                  <span className="badge bg-danger">
+                    {cartItems.length || 0}
+                  </span>
+                </span>
               </Link>
             </ul>
           </div>

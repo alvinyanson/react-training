@@ -9,6 +9,7 @@ type CartState = {
     increaseQty: (cartItem: CartItem) => void;
     decreaseQty: (cartItem: CartItem) => void;
     removeFromCart: (cartItem: CartItem) => void;
+    checkout: () => void;
   };
 };
 
@@ -51,6 +52,11 @@ const useCartStore = create<CartState>((set) => ({
     removeFromCart: (cartItem: CartItem) =>
       set((state) => ({
         cartItems: state.cartItems.filter((item) => item.id !== cartItem.id),
+      })),
+
+    checkout: () =>
+      set(() => ({
+        cartItems: [],
       })),
   },
 }));

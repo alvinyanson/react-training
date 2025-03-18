@@ -15,9 +15,9 @@ function Index() {
 
   return (
     <div className="p-2">
-      <h3>Welcome Home!</h3>
+      <h3>Hello!</h3>
 
-      <div className="row">
+      <div className="row mt-4">
         {result.products.map((product: Product) => (
           <div className="col-md-3 col-12 mb-4" key={product.id}>
             <div className="card">

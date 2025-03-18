@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { fetchProductById } from '../../api/product.service';
+import { useCartActions } from '../../stores/cart.store';
 
 export const Route = createFileRoute('/items/$itemId')({
   component: RouteComponent,
@@ -10,6 +11,7 @@ export const Route = createFileRoute('/items/$itemId')({
 
 function RouteComponent() {
   const product = Route.useLoaderData();
+  const { addToCart } = useCartActions();
 
   return (
     <>
@@ -28,8 +30,10 @@ function RouteComponent() {
           <div className="col-md-6 col-12">
             <p className="lead">{product.description}</p>
             <h3>${product.price}</h3>
-            <br/>
-            <button className="btn btn-dark">Add to Cart</button>
+            <br />
+            <button onClick={() => addToCart(product)} className="btn btn-dark">
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
