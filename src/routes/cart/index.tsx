@@ -93,18 +93,31 @@ function RouteComponent() {
             </tr>
           ))}
           <tr>
-            <td colSpan={7} className="text-end">
-              <h4>{formatNumberWithCommas(totalPrice)}</h4>
-            </td>
-            <td></td>
+            {cartItems.length > 0 ? (
+              <>
+                <td colSpan={7} className="text-end">
+                  <h4>{formatNumberWithCommas(totalPrice)}</h4>
+                </td>
+                <td></td>
+              </>
+            ) : (
+              <td colSpan={8} className="text-center">
+                <span>Cart is empty</span>
+              </td>
+            )}
+            {}
           </tr>
         </tbody>
       </table>
 
-      <br />
-      <button onClick={() => handleCheckout()} className="btn btn-dark">
-        Checkout
-      </button>
+      {cartItems.length > 0 && (
+        <>
+          <br />
+          <button onClick={() => handleCheckout()} className="btn btn-dark">
+            Checkout
+          </button>
+        </>
+      )}
     </>
   );
 }

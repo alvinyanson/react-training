@@ -28,7 +28,11 @@ function Index() {
               />
               <div className="card-body">
                 <h6 className="card-title">{product.title}</h6>
-                <p className="card-text">{product.category}</p>
+                <div className='mb-3'>
+                  <span className="badge bg-danger">
+                    {product.category}
+                  </span>
+                </div>
                 <button
                   onClick={() => addToCart(product)}
                   className="btn btn-dark me-3"

@@ -13,8 +13,8 @@ function RootComponent() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <Link to="/">
-            <span className="navbar-brand">Shopping App</span>
+          <Link to="/" className="navbar-brand">
+            Shopping App
           </Link>
           <button
             className="navbar-toggler"
@@ -29,16 +29,11 @@ function RootComponent() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <Link to="/" className="nav-item">
-                <span className="nav-link">Home</span>
+              <Link to="/" className="nav-link text-decoration-none">
+                Home
               </Link>
-              <Link to="/cart" className="nav-item">
-                <span className="nav-link">
-                  Cart{' '}
-                  <span className="badge bg-danger">
-                    {cartItems.length || 0}
-                  </span>
-                </span>
+              <Link to="/cart" className="nav-link">
+                Cart <span className="badge bg-danger">{cartItems.length}</span>
               </Link>
             </ul>
           </div>
