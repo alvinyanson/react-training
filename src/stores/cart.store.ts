@@ -18,17 +18,31 @@ const useCartStore = create<CartState>((set) => ({
   actions: {
     addToCart: (product: Product) =>
       set((state) => ({
-        cartItems: [
-          ...state.cartItems,
-          {
-            id: product.id,
-            thumbnail: product.thumbnail || '',
-            name: product.title,
-            category: product.category,
-            price: product.price,
-            quantity: 1,
-          } as CartItem,
-        ],
+        cartItems: state.cartItems.some((item) => item.id === product.id)
+          ? state.cartItems.map((item) => {
+              if (item.id === product.id) {
+                return {
+                  id: product.id,
+                  thumbnail: product.thumbnail || '',
+                  name: product.title,
+                  category: product.category,
+                  price: product.price,
+                  quantity: (item.quantity || 1) + 1,
+                };
+              }
+              return item;
+            })
+          : [
+              ...state.cartItems,
+              {
+                id: product.id,
+                thumbnail: product.thumbnail || '',
+                name: product.title,
+                category: product.category,
+                price: product.price,
+                quantity: 1,
+              },
+            ],
       })),
 
     increaseQty: (cartItem: CartItem) =>
