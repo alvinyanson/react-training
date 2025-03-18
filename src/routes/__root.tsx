@@ -4,17 +4,46 @@ import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 export const Route = createRootRoute({
   component: () => (
     <>
-      <div className="p-2 flex gap-2">
-        <Link to="/" className="[&.active]:font-bold">
-          Home
-        </Link>{' '}
-        <Link to="/cart" className="[&.active]:font-bold">
-          Cart
-        </Link>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
+            Shopping App
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <Link to="/" className="nav-item">
+                <span className="nav-link">Home</span>
+              </Link>
+              <Link
+                to="/cart"
+                className="nav-item"
+              >
+                <span className="nav-link">Cart</span>
+              </Link>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div className="container">
+        <div className="row">
+          <div className="col-12 p-5">
+            <Outlet />
+            <TanStackRouterDevtools />
+          </div>
+        </div>
       </div>
-      <hr />
-      <Outlet />
-      <TanStackRouterDevtools />
     </>
   ),
 })
