@@ -51,5 +51,3 @@ export class WatchLater {
     this.watched = !this.watched;
   }
 }
-
-export const watchList = new WatchList([]);

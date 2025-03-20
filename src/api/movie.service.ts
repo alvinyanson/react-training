@@ -4,7 +4,7 @@ export const IMAGE_CDN = 'https://image.tmdb.org/t/p/w300';
 
 export const FALLBACK_IMAGE = 'https://placehold.co/282x158.png';
 
-const BASE_URL = 'https://api.themoviedb.org/3/discover/movie';
+const BASE_URL = 'https://api.themoviedb.org/3/movie/popular';
 
 const KEY = 'a74e8d76782da6fe2b3d1cf5ebfdb505';
 

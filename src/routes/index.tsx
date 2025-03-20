@@ -9,13 +9,13 @@ export const Route = createFileRoute('/')({
 });
 
 function Index() {
-  const result = Route.useLoaderData();
+  const response = Route.useLoaderData();
 
   return (
     <div className="p-2">
       <h3>Hello!</h3>
       <div className="row mt-4">
-        {result.results.map((movie: Movie) => (
+        {response.results.map((movie: Movie) => (
           <div
             className="col-sm-6 col-md-4 col-lg-3 col-12 mb-4"
             key={movie.id}

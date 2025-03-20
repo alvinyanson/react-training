@@ -1,10 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { observer } from 'mobx-react-lite';
 import WatchListCard from '../../components/watchlist-card';
-import { WatchLater, watchList } from '../../store/watch-list-store';
+import { useWatchList } from '../../context/app-context';
+import { WatchLater } from '../../store/watch-list-store';
 
 export const RouteComponent = observer(() => {
-  
+  const watchList = useWatchList();
+
   const filteredMovies = watchList.savedMovies.filter(
     (watch: WatchLater) => watch.watched
   );
