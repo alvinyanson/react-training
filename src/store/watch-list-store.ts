@@ -51,3 +51,6 @@ export class WatchLater {
     this.watched = !this.watched;
   }
 }
+
+// singleton instance of the store
+export const watchListStore = new WatchList([]);

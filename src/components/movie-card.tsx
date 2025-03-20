@@ -1,6 +1,5 @@
 import { FALLBACK_IMAGE, IMAGE_CDN } from '../api/movie.service';
-import { useWatchList } from '../context/app-context';
-import { WatchLater } from '../store/watch-list-store';
+import { WatchLater, watchListStore } from '../store/watch-list-store';
 import { Movie } from '../types/movie';
 
 type MovieCardProps = {
@@ -8,14 +7,12 @@ type MovieCardProps = {
 };
 
 function MovieCard({ movie }: MovieCardProps) {
-  const watchList = useWatchList();
-
   const handleSave = (movie: Movie) => {
     const watchLater = new WatchLater(movie);
     // set 'watched' to true;
     watchLater.toggleWatch();
     // save to watchlist
-    watchList.save(watchLater);
+    watchListStore.save(watchLater);
   };
 
   return (

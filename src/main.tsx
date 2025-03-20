@@ -1,10 +1,9 @@
+import { RouterProvider, createRouter } from '@tanstack/react-router';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, createRouter } from '@tanstack/react-router';
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen';
-import { WatchListContextProvider } from './context/app-context';
 
 // Create a new router instance
 const router = createRouter({ routeTree });
@@ -22,9 +21,8 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <WatchListContextProvider>
-        <RouterProvider router={router} />
-      </WatchListContextProvider>
+      Provider
+      <RouterProvider router={router} />
     </StrictMode>
   );
 }
