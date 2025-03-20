@@ -17,7 +17,7 @@ function MovieCard({ movie }: MovieCardProps) {
 
   return (
     <>
-      <div className="card">
+      <div className="card text-white border-0">
         {/* movie cover image */}
         <img
           src={`${movie.backdrop_path === null ? FALLBACK_IMAGE : `${IMAGE_CDN + movie.backdrop_path}`}`}
@@ -26,17 +26,21 @@ function MovieCard({ movie }: MovieCardProps) {
         />
 
         {/* movie info */}
-        <div className="card-body">
-          <h6 className="card-title text-truncate">{movie.title}</h6>
-          {/* <h4 className="mb-4">{formatNumberWithCommas(product.price)}</h4> */}
+        <div className="card-img-overlay">
+          <div className="d-flex flex-column py-4">
+            <h6 className="card-title text-truncate">{movie.title}</h6>
+            {/* <h4 className="mb-4">{formatNumberWithCommas(product.price)}</h4> */}
 
-          {/* watch later button */}
-          <button
-            onClick={() => handleSave(movie)}
-            className="btn btn-light mt-3"
-          >
-            Watch Later
-          </button>
+            {/* watch later button */}
+            <div>
+              <button
+                onClick={() => handleSave(movie)}
+                className="btn btn-success btn-sm mt-3"
+              >
+                Watch Later
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -9,7 +9,7 @@ type Props = {
 function WatchListCard({ movie, remove }: Props) {
   return (
     <>
-      <div className="card">
+      <div className="card text-white border-0">
         {/* movie cover image */}
         <img
           src={`${movie.movie.backdrop_path === null ? FALLBACK_IMAGE : `${IMAGE_CDN + movie.movie.backdrop_path}`}`}
@@ -18,14 +18,17 @@ function WatchListCard({ movie, remove }: Props) {
         />
 
         {/* movie info */}
-        <div className="card-body">
-          <h6 className="card-title text-truncate">{movie.movie.title}</h6>
-          {/* <h4 className="mb-4">{formatNumberWithCommas(product.price)}</h4> */}
+        <div className="card-img-overlay">
+          <div className="d-flex flex-column py-4">
+            <h6 className="card-title text-truncate">{movie.movie.title}</h6>
 
-          {/* watch later button */}
-          <button onClick={remove} className="btn btn-light mt-3">
-            Remove
-          </button>
+            {/* remove button */}
+            <div>
+              <button onClick={remove} className="btn btn-danger btn-sm mt-3">
+                Remove
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -15,9 +15,8 @@ export const RouteComponent = observer(() => {
 
   return (
     <>
+      <h3>Watch Later</h3>
       <div className="row mt-4">
-        <h3>Watch Later</h3>
-
         {filteredMovies.map((movie) => (
           <div
             key={movie.movie.id}
@@ -26,6 +25,12 @@ export const RouteComponent = observer(() => {
             <WatchListCard movie={movie} remove={() => handleRemove(movie)} />
           </div>
         ))}
+
+        {filteredMovies.length <= 0 && (
+          <h5 className="text-center text-muted mt-5">
+            You don't have any watchlist...
+          </h5>
+        )}
       </div>
     </>
   );

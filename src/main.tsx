@@ -21,7 +21,6 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      Provider
       <RouterProvider router={router} />
     </StrictMode>
   );
