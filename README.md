@@ -2,17 +2,13 @@
 
 ## Overview
 
-![Movie watchlist app Screenshot](https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/05-tanstack-zustand-shopping/localhost_5173.png)
+![Movie watchlist app Screenshot](https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/06-mobx-state-management/localhost_5173__page%3D1.png)
 
 A simple app that lets you browse movies using data from The Movie Database (TMDb) (https://api.themoviedb.org). Features include adding movies to your watchlist and removing them when you're done.
 
-### Home
-
-![Home Screenshot](https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/05-tanstack-zustand-shopping/localhost_5173_cart.png)
-
 ### Watchlist
 
-![Watchlist Screenshot](https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/05-tanstack-zustand-shopping/localhost_5173_items_28.png)
+![Watchlist Screenshot](https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/06-mobx-state-management/localhost_5173__page%3D1%20(2).png)
 
 ## Clone the Repository
 
