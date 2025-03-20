@@ -12,8 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
-import { Route as CartIndexImport } from './routes/cart/index'
-import { Route as ItemsItemIdImport } from './routes/items/$itemId'
+import { Route as WatchlistIndexImport } from './routes/watchlist/index'
 
 // Create/Update Routes
 
@@ -23,15 +22,9 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const CartIndexRoute = CartIndexImport.update({
-  id: '/cart/',
-  path: '/cart/',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const ItemsItemIdRoute = ItemsItemIdImport.update({
-  id: '/items/$itemId',
-  path: '/items/$itemId',
+const WatchlistIndexRoute = WatchlistIndexImport.update({
+  id: '/watchlist/',
+  path: '/watchlist/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -46,18 +39,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/items/$itemId': {
-      id: '/items/$itemId'
-      path: '/items/$itemId'
-      fullPath: '/items/$itemId'
-      preLoaderRoute: typeof ItemsItemIdImport
-      parentRoute: typeof rootRoute
-    }
-    '/cart/': {
-      id: '/cart/'
-      path: '/cart'
-      fullPath: '/cart'
-      preLoaderRoute: typeof CartIndexImport
+    '/watchlist/': {
+      id: '/watchlist/'
+      path: '/watchlist'
+      fullPath: '/watchlist'
+      preLoaderRoute: typeof WatchlistIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -67,42 +53,37 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/items/$itemId': typeof ItemsItemIdRoute
-  '/cart': typeof CartIndexRoute
+  '/watchlist': typeof WatchlistIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/items/$itemId': typeof ItemsItemIdRoute
-  '/cart': typeof CartIndexRoute
+  '/watchlist': typeof WatchlistIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/items/$itemId': typeof ItemsItemIdRoute
-  '/cart/': typeof CartIndexRoute
+  '/watchlist/': typeof WatchlistIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/items/$itemId' | '/cart'
+  fullPaths: '/' | '/watchlist'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/items/$itemId' | '/cart'
-  id: '__root__' | '/' | '/items/$itemId' | '/cart/'
+  to: '/' | '/watchlist'
+  id: '__root__' | '/' | '/watchlist/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ItemsItemIdRoute: typeof ItemsItemIdRoute
-  CartIndexRoute: typeof CartIndexRoute
+  WatchlistIndexRoute: typeof WatchlistIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ItemsItemIdRoute: ItemsItemIdRoute,
-  CartIndexRoute: CartIndexRoute,
+  WatchlistIndexRoute: WatchlistIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -116,18 +97,14 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/items/$itemId",
-        "/cart/"
+        "/watchlist/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/items/$itemId": {
-      "filePath": "items/$itemId.tsx"
-    },
-    "/cart/": {
-      "filePath": "cart/index.tsx"
+    "/watchlist/": {
+      "filePath": "watchlist/index.tsx"
     }
   }
 }

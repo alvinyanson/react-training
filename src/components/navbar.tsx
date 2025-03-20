@@ -1,8 +1,6 @@
 import { Link } from '@tanstack/react-router';
-import { useCartItems } from '../stores/cart.store';
 
 function Navbar() {
-  const cartItems = useCartItems();
 
   return (
     <>
@@ -13,7 +11,7 @@ function Navbar() {
         <div className="container-fluid">
           {/* app name */}
           <Link to="/" className="navbar-brand">
-            Shopping App
+            Movie Watchlist
           </Link>
 
           {/* smaller devices toggler */}
@@ -35,8 +33,8 @@ function Navbar() {
               <Link to="/" className="nav-link text-decoration-none">
                 Home
               </Link>
-              <Link to="/cart" className="nav-link">
-                Cart <span className="badge bg-danger">{cartItems.length}</span>
+              <Link to="/watchlist" className="nav-link">
+                Watchlist
               </Link>
             </ul>
           </div>
