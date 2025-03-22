@@ -1,4 +1,4 @@
-import { useExpense, useExpenseDispatch } from "../context/ExpenseContext";
+import { useExpense, useExpenseDispatch } from "../context/expense-context";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend);

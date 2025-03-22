@@ -1,4 +1,4 @@
-import { useExpense } from "../context/ExpenseContext";
+import { useExpense } from "../context/expense-context";
 
 function Accounts() {
     const state = useExpense();

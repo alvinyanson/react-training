@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useExpense, useExpenseDispatch } from "../context/ExpenseContext";
+import { useExpense, useExpenseDispatch } from "../context/expense-context";
 import { AccountsList, CategoryList, RecordType } from '../data';
 import { v4 as uuidv4 } from 'uuid';
 

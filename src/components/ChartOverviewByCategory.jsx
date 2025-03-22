@@ -1,5 +1,5 @@
 import React from 'react'
-import { useExpense } from "../context/ExpenseContext";
+import { useExpense } from "../context/expense-context";
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import useGroupedExpenseData from "../hooks/useGroupedExpenseData";
