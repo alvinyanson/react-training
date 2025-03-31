@@ -1,29 +1,27 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { useCartActions, useCartItems } from '../../stores/cart.store';
-import { formatNumberWithCommas } from '../../util';
-import { useMemo } from 'react';
+import { createFileRoute } from '@tanstack/react-router'
+import { useCartActions, useCartItems } from '../../stores/cart.store'
+import { formatNumberWithCommas } from '../../util'
+import { useMemo } from 'react'
 
 export const Route = createFileRoute('/cart/')({
   component: RouteComponent,
-});
+})
 
 function RouteComponent() {
-  const cartItems = useCartItems();
+  const cartItems = useCartItems()
 
-  const { increaseQty, decreaseQty, removeFromCart, checkout } =
-    useCartActions();
+  const { increaseQty, decreaseQty, removeFromCart, checkout } = useCartActions()
 
   const totalPrice = useMemo(
-    () =>
-      cartItems.reduce((total, item) => total + item.quantity * item.price, 0),
+    () => cartItems.reduce((total, item) => total + item.quantity * item.price, 0),
     [cartItems]
-  );
+  )
 
   const handleCheckout = () => {
     if (confirm('Confirm checkout?')) {
-      checkout();
+      checkout()
     }
-  };
+  }
 
   return (
     <>
@@ -61,16 +59,8 @@ function RouteComponent() {
               <td>{item.quantity}</td>
               <td>{formatNumberWithCommas(item.quantity * item.price)}</td>
               <td>
-                <div
-                  className="btn-group me-3"
-                  role="group"
-                  aria-label="Basic example"
-                >
-                  <button
-                    onClick={() => increaseQty(item)}
-                    type="button"
-                    className="btn btn-light"
-                  >
+                <div className="btn-group me-3" role="group" aria-label="Basic example">
+                  <button onClick={() => increaseQty(item)} type="button" className="btn btn-light">
                     +
                   </button>
                   <button
@@ -124,5 +114,5 @@ function RouteComponent() {
         </>
       )}
     </>
-  );
+  )
 }

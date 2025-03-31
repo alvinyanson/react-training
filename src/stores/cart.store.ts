@@ -1,7 +1,7 @@
-import { create } from 'zustand';
-import { Product } from '../types/product';
-import { CartItem } from '../types/cart.item';
-import { CartState } from './cart.state';
+import { create } from 'zustand'
+import { Product } from '../types/product'
+import { CartItem } from '../types/cart.item'
+import { CartState } from './cart.state'
 
 // the cart store, not exported, so that no one can subscribe to the entire store
 const useCartStore = create<CartState>((set) => ({
@@ -20,9 +20,9 @@ const useCartStore = create<CartState>((set) => ({
                   category: product.category,
                   price: product.price,
                   quantity: (item.quantity || 1) + 1,
-                };
+                }
               }
-              return item;
+              return item
             })
           : // new item added to cart
             [
@@ -41,18 +41,14 @@ const useCartStore = create<CartState>((set) => ({
     increaseQty: (cartItem: CartItem) =>
       set((state) => ({
         cartItems: state.cartItems.map((item) =>
-          item.id === cartItem.id
-            ? { ...item, quantity: (item.quantity || 1) + 1 }
-            : item
+          item.id === cartItem.id ? { ...item, quantity: (item.quantity || 1) + 1 } : item
         ),
       })),
 
     decreaseQty: (cartItem: CartItem) =>
       set((state) => ({
         cartItems: state.cartItems.map((item) =>
-          item.id === cartItem.id
-            ? { ...item, quantity: (item.quantity || 1) - 1 }
-            : item
+          item.id === cartItem.id ? { ...item, quantity: (item.quantity || 1) - 1 } : item
         ),
       })),
 
@@ -66,9 +62,9 @@ const useCartStore = create<CartState>((set) => ({
         cartItems: [],
       })),
   },
-}));
+}))
 
 // exported - consumers don't need to write selectors
-export const useCartItems = () => useCartStore((state) => state.cartItems);
+export const useCartItems = () => useCartStore((state) => state.cartItems)
 
-export const useCartActions = () => useCartStore((state) => state.actions);
+export const useCartActions = () => useCartStore((state) => state.actions)

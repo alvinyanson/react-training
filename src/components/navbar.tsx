@@ -1,8 +1,8 @@
-import { Link } from '@tanstack/react-router';
-import { useCartItems } from '../stores/cart.store';
+import { Link } from '@tanstack/react-router'
+import { useCartItems } from '../stores/cart.store'
 
 function Navbar() {
-  const cartItems = useCartItems();
+  const cartItems = useCartItems()
 
   return (
     <>
@@ -43,7 +43,7 @@ function Navbar() {
         </div>
       </nav>
     </>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

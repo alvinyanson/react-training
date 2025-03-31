@@ -1,15 +1,15 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { fetchProducts } from '../api/product.service';
-import ProductCard from '../components/product-card';
-import { Product } from '../types/product';
+import { createFileRoute } from '@tanstack/react-router'
+import { fetchProducts } from '../api/product.service'
+import ProductCard from '../components/product-card'
+import { Product } from '../types/product'
 
 export const Route = createFileRoute('/')({
   component: Index,
   loader: () => fetchProducts(),
-});
+})
 
 function Index() {
-  const result = Route.useLoaderData();
+  const result = Route.useLoaderData()
 
   return (
     <div className="p-2">
@@ -23,5 +23,5 @@ function Index() {
         ))}
       </div>
     </div>
-  );
+  )
 }

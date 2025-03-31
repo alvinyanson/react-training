@@ -26,7 +26,6 @@ Or clone this specific branch
 
     git clone -b 05-tanstack-zustand-shopping https://github.com/alvinyanson/react-training
 
-
 ## Run the app
 
 After cloning the repository, navigate to the project directory and run the following command in the terminal.
@@ -34,4 +33,3 @@ After cloning the repository, navigate to the project directory and run the foll
     npm run install
 
     npm run dev
-

@@ -1,16 +1,16 @@
-import { useNavigate } from '@tanstack/react-router';
-import { useCartActions } from '../stores/cart.store';
-import { Product } from '../types/product';
-import { formatNumberWithCommas } from '../util';
-import { memo } from 'react';
+import { useNavigate } from '@tanstack/react-router'
+import { useCartActions } from '../stores/cart.store'
+import { Product } from '../types/product'
+import { formatNumberWithCommas } from '../util'
+import { memo } from 'react'
 
 type ProductCardProps = {
-  product: Product;
-};
+  product: Product
+}
 
 function ProductCard({ product }: ProductCardProps) {
-  const navigate = useNavigate();
-  const { addToCart } = useCartActions();
+  const navigate = useNavigate()
+  const { addToCart } = useCartActions()
 
   return (
     <>
@@ -21,11 +21,7 @@ function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* product image */}
-        <img
-          src={product.thumbnail}
-          className="card-img-top p-5"
-          alt={product.title}
-        />
+        <img src={product.thumbnail} className="card-img-top p-5" alt={product.title} />
 
         {/* product info */}
         <div className="card-body">
@@ -33,10 +29,7 @@ function ProductCard({ product }: ProductCardProps) {
           <h4 className="mb-4">{formatNumberWithCommas(product.price)}</h4>
 
           {/* add to cart button */}
-          <button
-            onClick={() => addToCart(product)}
-            className="btn btn-dark me-3"
-          >
+          <button onClick={() => addToCart(product)} className="btn btn-dark me-3">
             Add to Cart
           </button>
 
@@ -55,7 +48,7 @@ function ProductCard({ product }: ProductCardProps) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default memo(ProductCard);
+export default memo(ProductCard)
