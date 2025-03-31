@@ -8,7 +8,7 @@ A simple app that lets you browse movies using data from The Movie Database (TMD
 
 ### Watchlist
 
-![Watchlist Screenshot](https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/06-mobx-state-management/localhost_5173__page%3D1%20(2).png)
+![Watchlist Screenshot](<https://raw.githubusercontent.com/alvinyanson/react-training/refs/heads/06-mobx-state-management/localhost_5173__page%3D1%20(2).png>)
 
 ## Clone the Repository
 
@@ -20,7 +20,6 @@ Or clone this specific branch
 
     git clone -b 06-mobx-state-management https://github.com/alvinyanson/react-training
 
-
 ## Run the app
 
 After cloning the repository, navigate to the project directory and run the following command in the terminal.
@@ -28,4 +27,3 @@ After cloning the repository, navigate to the project directory and run the foll
     npm run install
 
     npm run dev
-

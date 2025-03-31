@@ -1,20 +1,13 @@
-import { createContext, useContext, useState } from 'react';
-import { WatchList } from '../store/watch-list-store';
-
-const WatchListContext = createContext<WatchList>(null!);
+import { useState } from 'react'
+import { WatchListContext } from '../hooks/useWatchlist'
+import { WatchList } from '../store/watch-list-store'
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 export const WatchListContextProvider = ({ children }: Props) => {
-  const [store] = useState(new WatchList([]));
+  const [store] = useState(new WatchList([]))
 
-  return (
-    <WatchListContext.Provider value={store}>
-      {children}
-    </WatchListContext.Provider>
-  );
-};
-
-export const useWatchList = () => useContext(WatchListContext);
+  return <WatchListContext.Provider value={store}>{children}</WatchListContext.Provider>
+}

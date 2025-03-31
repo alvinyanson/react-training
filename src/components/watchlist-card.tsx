@@ -1,10 +1,10 @@
-import { FALLBACK_IMAGE, IMAGE_CDN } from '../api/movie.service';
-import { WatchLater } from '../store/watch-list-store';
+import { FALLBACK_IMAGE, IMAGE_CDN } from '../api/movie.service'
+import { WatchLater } from '../store/watch-list-store'
 
 type Props = {
-  movie: WatchLater;
-  remove: () => void;
-};
+  movie: WatchLater
+  remove: () => void
+}
 
 function WatchListCard({ movie, remove }: Props) {
   return (
@@ -32,7 +32,7 @@ function WatchListCard({ movie, remove }: Props) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default WatchListCard;
+export default WatchListCard

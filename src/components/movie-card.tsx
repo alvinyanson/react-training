@@ -1,19 +1,19 @@
-import { FALLBACK_IMAGE, IMAGE_CDN } from '../api/movie.service';
-import { WatchLater, watchListStore } from '../store/watch-list-store';
-import { Movie } from '../types/movie';
+import { FALLBACK_IMAGE, IMAGE_CDN } from '../api/movie.service'
+import { WatchLater, watchListStore } from '../store/watch-list-store'
+import { Movie } from '../types/movie'
 
 type MovieCardProps = {
-  movie: Movie;
-};
+  movie: Movie
+}
 
 function MovieCard({ movie }: MovieCardProps) {
   const handleSave = (movie: Movie) => {
-    const watchLater = new WatchLater(movie);
+    const watchLater = new WatchLater(movie)
     // set 'watched' to true;
-    watchLater.toggleWatch();
+    watchLater.toggleWatch()
     // save to watchlist
-    watchListStore.save(watchLater);
-  };
+    watchListStore.save(watchLater)
+  }
 
   return (
     <>
@@ -33,10 +33,7 @@ function MovieCard({ movie }: MovieCardProps) {
 
             {/* watch later button */}
             <div>
-              <button
-                onClick={() => handleSave(movie)}
-                className="btn btn-success btn-sm mt-3"
-              >
+              <button onClick={() => handleSave(movie)} className="btn btn-success btn-sm mt-3">
                 Watch Later
               </button>
             </div>
@@ -44,7 +41,7 @@ function MovieCard({ movie }: MovieCardProps) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default MovieCard;
+export default MovieCard

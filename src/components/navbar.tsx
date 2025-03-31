@@ -1,7 +1,6 @@
-import { Link } from '@tanstack/react-router';
+import { Link } from '@tanstack/react-router'
 
 function Navbar() {
-
   return (
     <>
       <nav
@@ -41,7 +40,7 @@ function Navbar() {
         </div>
       </nav>
     </>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
