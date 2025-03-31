@@ -23,4 +23,3 @@ After cloning the repository, navigate to the project directory and run the foll
     npm run install
 
     npm run dev
-
