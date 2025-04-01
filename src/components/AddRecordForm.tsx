@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import { AccountsList, CategoryList, RecordType } from '../data'
+import { AccountsList, CategoryList, RecordsList } from '../data'
 import { ExpenseAction, ExpenseState } from '../types'
 import { useExpense } from '../hooks/useExpense'
 import { useExpenseDispatch } from '../hooks/useExpenseDispatch'
@@ -23,7 +23,7 @@ function AddRecordForm() {
       return
     }
 
-    if (record.action === 'add') {
+    if (!record.activeEdit) {
       const newRecord = { ...record, id: uuidv4() }
       dispatch({ type: 'add_record', record: newRecord })
       setRecord(newRecord)
@@ -61,8 +61,13 @@ function AddRecordForm() {
           <h5 className="card-title">Add Record</h5>
           <div className="mb-3">
             <label className="form-label">Type</label>
-            <select className="form-select" onChange={handleChangeType} value={record.type}>
-              {RecordType.map((record) => (
+            <select
+              disabled={record.activeEdit}
+              className="form-select"
+              onChange={handleChangeType}
+              value={record.type}
+            >
+              {RecordsList.map((record) => (
                 <option key={record.id}>{record.name}</option>
               ))}
             </select>
@@ -117,7 +122,7 @@ function AddRecordForm() {
           </div>
 
           <button className="btn btn-dark" onClick={handleSubmitForm}>
-            Add Record
+            {record.activeEdit ? 'Update' : 'Add'} Record
           </button>
         </div>
       </div>

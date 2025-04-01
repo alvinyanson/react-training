@@ -1,20 +1,19 @@
 import { useReducer } from 'react'
-import { AccountsList, CategoryList, DummyRecords, RecordType } from '../data'
+import { AccountsList, AccountsType, CategoriesType, DummyRecords, RecordsType } from '../data'
 import { ExpenseContext } from '../hooks/useExpense'
-import { RecordsProviderProps } from '../types'
-import { expenseTrackerReducer } from './expense-reducer'
 import { ExpenseDispatchContext } from '../hooks/useExpenseDispatch'
+import { RecordsProviderProps } from '../types'
+import { expenseReducer } from './expense-reducer'
 
 export function RecordsProvider({ children }: RecordsProviderProps) {
-  const [records, dispatch] = useReducer(expenseTrackerReducer, {
+  const [records, dispatch] = useReducer(expenseReducer, {
     records: DummyRecords,
     accounts: AccountsList,
     form: {
-      action: 'add',
-      type: RecordType[0].name,
-      account: AccountsList[0].name,
       amount: '',
-      category: CategoryList[0].name,
+      type: RecordsType.EXPENSE,
+      account: AccountsType.SAVINGS,
+      category: CategoriesType.FINANCIAL_EXPENSES,
       date: new Date().toISOString().split('T')[0],
     },
   })

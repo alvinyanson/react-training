@@ -1,7 +1,7 @@
 import { RecordsType } from '../data'
 import { ExpenseAction, ExpenseState } from '../types'
 
-export function expenseTrackerReducer(state: ExpenseState, action: ExpenseAction) {
+export function expenseReducer(state: ExpenseState, action: ExpenseAction) {
   switch (action.type) {
     case 'add_record': {
       const updatedAccounts = state.accounts.map((account) => {
@@ -61,6 +61,8 @@ export function expenseTrackerReducer(state: ExpenseState, action: ExpenseAction
           const newAmount = Number(action.record.amount) || 0
           const balance = Number(account.balance) || 0
 
+          console.log({ previousAmount, newAmount, balance })
+
           return {
             ...account,
             balance:
@@ -84,7 +86,7 @@ export function expenseTrackerReducer(state: ExpenseState, action: ExpenseAction
       return { ...state, form: resetForm, records, accounts: updatedAccounts }
     }
 
-    case 'set_form': {
+    case 'seed_form': {
       return {
         ...state,
         form: action.record,

@@ -1,7 +1,27 @@
 export const RecordsType = {
   EXPENSE: 'Expense',
   INCOME: 'Income',
-}
+} as const
+
+export const AccountsType = {
+  SAVINGS: 'Savings',
+  CASH: 'Cash',
+  DIGITAL_BANK: 'Digital Bank',
+  EMERGENCY_FUND: 'Emergency Fund',
+} as const
+
+export const CategoriesType = {
+  FOOD_BEVERAGES: 'Food & Beverages',
+  SHOPPING: 'Shopping',
+  HOUSING: 'Housing',
+  TRANSPORTATION: 'Transportation',
+  VEHICLE: 'Vehicle',
+  LIFE_ENTERTAINMENT: 'Life & Entertainment',
+  COMMUNICATION_PC: 'Communication, PC',
+  FINANCIAL_EXPENSES: 'Financial Expenses',
+  INCOME: 'Income',
+  OTHERS: 'Others',
+} as const
 
 export const AccountsList = [
   {
@@ -22,11 +42,11 @@ export const AccountsList = [
   {
     id: 4,
     name: 'Emergency Fund',
-    balance: 170000,
+    balance: 169500,
   },
 ]
 
-export const RecordType = [
+export const RecordsList = [
   {
     id: 1,
     name: 'Expense',
@@ -82,16 +102,16 @@ export const CategoryList = [
 
 export const DummyRecords = [
   {
-    action: 'add',
+    activeEdit: false,
     type: 'Expense',
-    account: 'Cash',
+    account: 'Savings',
     amount: '100',
     category: 'Food & Beverages',
     date: '2025-03-12',
     id: 'fe2e4a05-a58f-4a9d-bf9c-eb9c357098e7',
   },
   {
-    action: 'add',
+    activeEdit: false,
     type: 'Expense',
     account: 'Cash',
     amount: '100',
@@ -100,7 +120,7 @@ export const DummyRecords = [
     id: '5e5d88e4-c9f2-4710-8c5f-5caf04757a9c',
   },
   {
-    action: 'add',
+    activeEdit: false,
     type: 'Expense',
     account: 'Cash',
     amount: '100',
@@ -109,7 +129,7 @@ export const DummyRecords = [
     id: 'bc632ca3-9ce0-4a9b-a626-9870afbea778',
   },
   {
-    action: 'add',
+    activeEdit: false,
     type: 'Expense',
     account: 'Cash',
     amount: '100',
@@ -118,12 +138,21 @@ export const DummyRecords = [
     id: '768522be-2024-4085-8da1-c8a1a0d2bb45',
   },
   {
-    action: 'add',
+    activeEdit: false,
     type: 'Expense',
     account: 'Cash',
     amount: '100',
     category: 'Vehicle',
     date: '2025-03-12',
     id: '265ddbc9-7266-4900-870b-65e360a01c2c',
+  },
+  {
+    activeEdit: false,
+    type: 'Income',
+    account: 'Emergency Fund',
+    amount: '500',
+    category: 'Vehicle',
+    date: '2025-03-12',
+    id: '265ddbc9-7266-4900-870b-65e360a01c2D',
   },
 ]

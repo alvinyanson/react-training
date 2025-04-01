@@ -13,7 +13,7 @@ export type ExpenseAction = {
 
 export type Record = {
   id?: string
-  action: string
+  activeEdit?: boolean
   type: string
   account: string
   amount: string

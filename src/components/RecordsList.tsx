@@ -14,8 +14,8 @@ function RecordsList() {
   }
 
   const handleEdit = (record: Record) => {
-    record.action = 'edit'
-    dispatch({ type: 'set_form', record })
+    record.activeEdit = true
+    dispatch({ type: 'seed_form', record })
   }
 
   return (
