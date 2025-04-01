@@ -156,3 +156,15 @@ export const DummyRecords = [
     id: '265ddbc9-7266-4900-870b-65e360a01c2D',
   },
 ]
+
+export const InitialAppState = {
+  records: DummyRecords,
+  accounts: AccountsList,
+  form: {
+    amount: '',
+    type: RecordsType.EXPENSE,
+    account: AccountsType.SAVINGS,
+    category: CategoriesType.FINANCIAL_EXPENSES,
+    date: new Date().toISOString().split('T')[0],
+  },
+}

@@ -1,4 +1,4 @@
-import { RecordsType } from '../data'
+import { RecordsType } from '../data/data'
 import { ExpenseAction, ExpenseState } from '../types'
 
 export function expenseReducer(state: ExpenseState, action: ExpenseAction) {
@@ -60,8 +60,6 @@ export function expenseReducer(state: ExpenseState, action: ExpenseAction) {
           const previousAmount = Number(previousRecord.amount) || 0
           const newAmount = Number(action.record.amount) || 0
           const balance = Number(account.balance) || 0
-
-          console.log({ previousAmount, newAmount, balance })
 
           return {
             ...account,

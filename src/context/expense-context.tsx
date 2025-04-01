@@ -1,12 +1,12 @@
 import { useReducer } from 'react'
-import { AccountsList, AccountsType, CategoriesType, DummyRecords, RecordsType } from '../data'
+import { AccountsList, AccountsType, CategoriesType, DummyRecords, RecordsType } from '../data/data'
 import { ExpenseContext } from '../hooks/useExpense'
 import { ExpenseDispatchContext } from '../hooks/useExpenseDispatch'
 import { RecordsProviderProps } from '../types'
 import { expenseReducer } from './expense-reducer'
 
 export function RecordsProvider({ children }: RecordsProviderProps) {
-  const [records, dispatch] = useReducer(expenseReducer, {
+  const [state, dispatch] = useReducer(expenseReducer, {
     records: DummyRecords,
     accounts: AccountsList,
     form: {
@@ -19,7 +19,7 @@ export function RecordsProvider({ children }: RecordsProviderProps) {
   })
 
   return (
-    <ExpenseContext.Provider value={records}>
+    <ExpenseContext.Provider value={state}>
       <ExpenseDispatchContext.Provider value={dispatch}>{children}</ExpenseDispatchContext.Provider>
     </ExpenseContext.Provider>
   )

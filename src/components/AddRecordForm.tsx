@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import { AccountsList, CategoryList, RecordsList } from '../data'
+import { AccountsList, CategoryList, RecordsList } from '../data/data'
 import { ExpenseAction, ExpenseState } from '../types'
 import { useExpense } from '../hooks/useExpense'
 import { useExpenseDispatch } from '../hooks/useExpenseDispatch'
