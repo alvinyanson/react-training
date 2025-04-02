@@ -1,7 +1,7 @@
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from 'chart.js'
-import { ExpenseAction, ExpenseState, Record } from '../types'
-import { useExpense } from '../hooks/useExpense'
-import { useExpenseDispatch } from '../hooks/useExpenseDispatch'
+import { ExpenseAction, ExpenseState, Record } from '../type'
+import { useExpense } from '@/hooks/useExpense'
+import { useExpenseDispatch } from '@/hooks/useExpenseDispatch'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 

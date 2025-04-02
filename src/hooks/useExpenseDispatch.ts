@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react'
-import { ExpenseAction } from '../types'
+import { ExpenseAction } from '@/type'
 
 export const ExpenseDispatchContext = createContext<React.Dispatch<ExpenseAction> | null>(null)
 

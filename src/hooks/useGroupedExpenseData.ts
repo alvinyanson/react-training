@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { Record } from '../types'
+import { Record } from '@/type'
 
 const useGroupedExpenseData = (records: Record[]) => {
   const data = useMemo(() => {

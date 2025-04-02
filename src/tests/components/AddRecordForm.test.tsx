@@ -1,9 +1,9 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import { JSX, ReactNode } from 'react'
-import AddRecordForm from '../../components/AddRecordForm'
-import { InitialAppState } from '../../data/data'
-import { ExpenseContext } from '../../hooks/useExpense'
-import { ExpenseDispatchContext } from '../../hooks/useExpenseDispatch'
+import AddRecordForm from '@/components/AddRecordForm'
+import { InitialAppState } from '@/data/data'
+import { ExpenseContext } from '@/hooks/useExpense'
+import { ExpenseDispatchContext } from '@/hooks/useExpenseDispatch'
 
 describe('AddRecordForm', () => {
   let wrapper: ({ children }: { children: ReactNode }) => JSX.Element

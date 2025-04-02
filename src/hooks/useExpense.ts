@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react'
-import { ExpenseState } from '../types'
+import { ExpenseState } from '@/type'
 
 export const ExpenseContext = createContext<ExpenseState | null>(null)
 

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
-import Accounts from '../../components/Accounts'
-import { InitialAppState } from '../../data/data'
-import { ExpenseContext } from '../../hooks/useExpense'
+import Accounts from '@/components/Accounts'
+import { InitialAppState } from '@/data/data'
+import { ExpenseContext } from '@/hooks/useExpense'
 import { ReactNode } from 'react'
 
 describe('Accounts Component', () => {

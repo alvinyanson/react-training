@@ -1,13 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
-import { expenseReducer } from '../../context/expense-reducer'
-import {
-  AccountsList,
-  AccountsType,
-  CategoriesType,
-  DummyRecords,
-  RecordsType,
-} from '../../data/data'
-import { ExpenseAction, Record } from '../../types'
+import { expenseReducer } from '@/context/expense-reducer'
+import { AccountsList, AccountsType, CategoriesType, DummyRecords, RecordsType } from '@/data/data'
+import { ExpenseAction, Record } from '@/type'
 
 describe('expenseReducer', () => {
   const initialState = {

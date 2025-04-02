@@ -1,5 +1,5 @@
-import { RecordsType } from '../data/data'
-import { ExpenseAction, ExpenseState } from '../types'
+import { RecordsType } from '@/data/data'
+import { ExpenseAction, ExpenseState } from '@/type'
 
 export function expenseReducer(state: ExpenseState, action: ExpenseAction) {
   switch (action.type) {

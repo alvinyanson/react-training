@@ -1,8 +1,8 @@
-import Accounts from './components/Accounts'
-import AddRecordForm from './components/AddRecordForm'
-import ChartOverviewByCategory from './components/ChartOverviewByCategory'
-import RecordsList from './components/RecordsList'
-import { RecordsProvider } from './context/expense-context'
+import Accounts from '@/components/Accounts'
+import AddRecordForm from '@/components/AddRecordForm'
+import ChartOverviewByCategory from '@/components/ChartOverviewByCategory'
+import RecordsList from '@/components/RecordsList'
+import { RecordsProvider } from '@/context/expense-context'
 
 function App() {
   return (

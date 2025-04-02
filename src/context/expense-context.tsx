@@ -1,9 +1,9 @@
 import { useReducer } from 'react'
-import { AccountsList, AccountsType, CategoriesType, DummyRecords, RecordsType } from '../data/data'
-import { ExpenseContext } from '../hooks/useExpense'
-import { ExpenseDispatchContext } from '../hooks/useExpenseDispatch'
-import { RecordsProviderProps } from '../types'
-import { expenseReducer } from './expense-reducer'
+import { AccountsList, AccountsType, CategoriesType, DummyRecords, RecordsType } from '@/data/data'
+import { ExpenseContext } from '@/hooks/useExpense'
+import { ExpenseDispatchContext } from '@/hooks/useExpenseDispatch'
+import { RecordsProviderProps } from '@/type'
+import { expenseReducer } from '@/context/expense-reducer'
 
 export function RecordsProvider({ children }: RecordsProviderProps) {
   const [state, dispatch] = useReducer(expenseReducer, {

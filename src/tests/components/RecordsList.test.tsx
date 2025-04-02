@@ -1,8 +1,8 @@
 import { JSX, ReactNode } from 'react'
-import { InitialAppState } from '../../data/data'
-import { ExpenseContext } from '../../hooks/useExpense'
-import { ExpenseDispatchContext } from '../../hooks/useExpenseDispatch'
-import RecordsList from '../../components/RecordsList'
+import { InitialAppState } from '@/data/data'
+import { ExpenseContext } from '@/hooks/useExpense'
+import { ExpenseDispatchContext } from '@/hooks/useExpenseDispatch'
+import RecordsList from '@/components/RecordsList'
 import { fireEvent, render, screen } from '@testing-library/react'
 
 describe('Records List Component', () => {

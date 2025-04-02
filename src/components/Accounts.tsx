@@ -1,5 +1,5 @@
-import { useExpense } from '../hooks/useExpense'
-import { ExpenseState } from '../types'
+import { useExpense } from '@/hooks/useExpense'
+import { ExpenseState } from '@/type'
 
 function Accounts() {
   const state = useExpense() as ExpenseState

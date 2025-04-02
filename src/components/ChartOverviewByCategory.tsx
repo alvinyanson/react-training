@@ -1,8 +1,8 @@
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from 'chart.js'
 import { Doughnut } from 'react-chartjs-2'
-import useGroupedExpenseData from '../hooks/useGroupedExpenseData'
-import { ExpenseState } from '../types'
-import { useExpense } from '../hooks/useExpense'
+import useGroupedExpenseData from '@/hooks/useGroupedExpenseData'
+import { ExpenseState } from '@/type'
+import { useExpense } from '@/hooks/useExpense'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
