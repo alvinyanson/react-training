@@ -3,8 +3,7 @@ import SelectCurrency from '@/components/SelectCurrency'
 import { Coin } from '@/type'
 import { FIAT_CURRENCIES } from '@/util'
 import { useEffect, useState } from 'react'
-
-const baseUrl = import.meta.env.VITE_COIN_GECKO_BASE_URL
+import { getCoinMarketData } from './api'
 
 function App() {
   const [coins, setCoins] = useState<Coin[]>([])
@@ -14,26 +13,15 @@ function App() {
   const [currency, setCurrency] = useState(FIAT_CURRENCIES[0]) // USD
 
   useEffect(() => {
-    const fetchCoins = async () => {
-      try {
-        setLoading(true)
-        setError('')
-
-        const response = await fetch(
-          `${baseUrl}/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=12&page=${page}&sparkline=false&price_change_percentage=24h`
-        )
-        const data = await response.json()
-
-        setCoins(data)
-      } catch (err) {
-        setError('There was a problem loading data from API.')
-        console.error('Error fetching data:', err)
-      } finally {
+    getCoinMarketData(currency, page)
+      .then((data) => {
         setLoading(false)
-      }
-    }
-
-    fetchCoins()
+        setCoins(data)
+      })
+      .catch((err) => {
+        setLoading(false)
+        setError(`There was a problem loading data from API: ${err}`)
+      })
   }, [currency, page])
 
   const handleChangeCurrency = (currency: string) => {
