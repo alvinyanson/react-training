@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react'
 import CoinCard from '@/components/CoinCard'
 import SelectCurrency from '@/components/SelectCurrency'
-import { COIN_GECKO_BASE_URL, FIAT_CURRENCIES } from '@/util'
 import { Coin } from '@/type'
+import { FIAT_CURRENCIES } from '@/util'
+import { useEffect, useState } from 'react'
+
+const baseUrl = import.meta.env.VITE_COIN_GECKO_BASE_URL
 
 function App() {
   const [coins, setCoins] = useState<Coin[]>([])
@@ -18,7 +20,7 @@ function App() {
         setError('')
 
         const response = await fetch(
-          `${COIN_GECKO_BASE_URL}/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=12&page=${page}&sparkline=false&price_change_percentage=24h`
+          `${baseUrl}/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=12&page=${page}&sparkline=false&price_change_percentage=24h`
         )
         const data = await response.json()
 

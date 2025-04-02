@@ -1,8 +1,8 @@
-export function formatNumberWithCommas(num) {
+export function formatNumberWithCommas(num: number) {
   return num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
-export function getCurrencySymbol(currency) {
+export function getCurrencySymbol(currency: string) {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: currency,
@@ -10,8 +10,6 @@ export function getCurrencySymbol(currency) {
     .formatToParts()
     .find((part) => part.type === 'currency')?.value
 }
-
-export const COIN_GECKO_BASE_URL = 'https://api.coingecko.com/api/v3'
 
 export const FIAT_CURRENCIES = [
   'USD',
