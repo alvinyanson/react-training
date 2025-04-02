@@ -60,8 +60,11 @@ function AddRecordForm() {
         <div className="card-body">
           <h5 className="card-title">Add Record</h5>
           <div className="mb-3">
-            <label className="form-label">Type</label>
+            <label htmlFor="type" className="form-label">
+              Type
+            </label>
             <select
+              id="type"
               disabled={record.activeEdit}
               className="form-select"
               onChange={handleChangeType}
@@ -74,8 +77,15 @@ function AddRecordForm() {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Account</label>
-            <select className="form-select" onChange={handleChangeAccount} value={record.account}>
+            <label htmlFor="account" className="form-label">
+              Account
+            </label>
+            <select
+              id="account"
+              className="form-select"
+              onChange={handleChangeAccount}
+              value={record.account}
+            >
               {AccountsList.map((record) => (
                 <option key={record.id}>{record.name}</option>
               ))}
@@ -83,8 +93,11 @@ function AddRecordForm() {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Amount</label>
+            <label htmlFor="amount" className="form-label">
+              Amount
+            </label>
             <input
+              id="amount"
               type="text"
               className="form-control"
               value={record.amount}
@@ -98,8 +111,15 @@ function AddRecordForm() {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Category</label>
-            <select className="form-select" onChange={handleChangeCategory} value={record.category}>
+            <label htmlFor="category" className="form-label">
+              Category
+            </label>
+            <select
+              id="category"
+              className="form-select"
+              onChange={handleChangeCategory}
+              value={record.category}
+            >
               {CategoryList.map((record) => (
                 <option key={record.id}>{record.name}</option>
               ))}
@@ -107,8 +127,11 @@ function AddRecordForm() {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Date</label>
+            <label htmlFor="date" className="form-label">
+              Date
+            </label>
             <input
+              id="date"
               type="date"
               className="form-control"
               value={record.date}
@@ -122,7 +145,7 @@ function AddRecordForm() {
           </div>
 
           <button className="btn btn-dark" onClick={handleSubmitForm}>
-            {record.activeEdit ? 'Update' : 'Add'} Record
+            Save Record
           </button>
         </div>
       </div>
