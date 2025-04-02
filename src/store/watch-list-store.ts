@@ -1,5 +1,5 @@
 import { action, makeObservable, observable } from 'mobx'
-import { Movie } from '../types/movie'
+import { Movie } from '@/type/movie'
 
 export class WatchList {
   savedMovies: WatchLater[] = [] // property to observe (either save or remove)

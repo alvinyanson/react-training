@@ -1,5 +1,5 @@
-import { FALLBACK_IMAGE, IMAGE_CDN } from '../api/movie.service'
-import { WatchLater } from '../store/watch-list-store'
+import { FALLBACK_IMAGE, IMAGE_CDN } from '@/api/movie.service'
+import { WatchLater } from '@/store/watch-list-store'
 
 type Props = {
   movie: WatchLater

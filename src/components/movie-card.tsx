@@ -1,6 +1,6 @@
-import { FALLBACK_IMAGE, IMAGE_CDN } from '../api/movie.service'
-import { WatchLater, watchListStore } from '../store/watch-list-store'
-import { Movie } from '../types/movie'
+import { FALLBACK_IMAGE, IMAGE_CDN } from '@/api/movie.service'
+import { WatchLater, watchListStore } from '@/store/watch-list-store'
+import { Movie } from '@/type/movie'
 
 type MovieCardProps = {
   movie: Movie

@@ -1,4 +1,4 @@
-import { MovieResponse } from '../types/movie'
+import { MovieResponse } from '@/type/movie'
 
 export const IMAGE_CDN = 'https://image.tmdb.org/t/p/w300'
 

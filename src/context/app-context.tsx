@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { WatchListContext } from '../hooks/useWatchlist'
-import { WatchList } from '../store/watch-list-store'
+import { WatchListContext } from '@/hooks/useWatchlist'
+import { WatchList } from '@/store/watch-list-store'
 
 type Props = {
   children: React.ReactNode

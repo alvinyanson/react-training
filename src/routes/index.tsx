@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
-import { fetchMovies } from '../api/movie.service'
-import MovieCard from '../components/movie-card'
-import { Movie } from '../types/movie'
+import { fetchMovies } from '@/api/movie.service'
+import MovieCard from '@/components/movie-card'
+import { Movie } from '@/type/movie'
 import { useState } from 'react'
 
 type ProductSearch = {
