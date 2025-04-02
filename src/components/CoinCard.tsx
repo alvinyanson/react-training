@@ -1,5 +1,5 @@
-import { formatNumberWithCommas, getCurrencySymbol } from '../util'
-import { CoinCardProps } from '../types/index'
+import { CoinCardProps } from '@/type'
+import { formatNumberWithCommas, getCurrencySymbol } from '@/util'
 
 function CoinCard({ currency, coin }: CoinCardProps) {
   return (

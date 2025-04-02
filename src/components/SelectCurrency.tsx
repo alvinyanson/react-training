@@ -1,5 +1,5 @@
-import { SelectCurrencyProps } from '../types'
-import { FIAT_CURRENCIES as currencies } from '../util'
+import { SelectCurrencyProps } from '@/type'
+import { FIAT_CURRENCIES as currencies } from '@/util'
 
 function SelectCurrency({ onChangeCurrency }: SelectCurrencyProps) {
   return (

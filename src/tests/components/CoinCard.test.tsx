@@ -1,6 +1,6 @@
+import CoinCard from '@/components/CoinCard'
+import { formatNumberWithCommas, getCurrencySymbol } from '@/util'
 import { render, screen } from '@testing-library/react'
-import CoinCard from '../../components/CoinCard'
-import { formatNumberWithCommas, getCurrencySymbol } from '../../util'
 
 describe('CoinCard Component', () => {
   const coin = {

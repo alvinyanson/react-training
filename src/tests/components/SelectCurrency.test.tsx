@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import SelectCurrency from '../../components/SelectCurrency'
-import { FIAT_CURRENCIES as currencies } from '../../util'
+import { FIAT_CURRENCIES as currencies } from '@/util'
+import SelectCurrency from '@/components/SelectCurrency'
 
 describe('SelectCurrency Component', () => {
   const mockOnChangeCurrency = vi.fn()
