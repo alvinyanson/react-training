@@ -27,10 +27,9 @@ function AddRecordForm() {
       const newRecord = { ...record, id: uuidv4() }
       dispatch({ type: 'add_record', record: newRecord })
       setRecord(newRecord)
-      return
+    } else {
+      dispatch({ type: 'edit_record', record })
     }
-
-    dispatch({ type: 'edit_record', record })
   }
 
   const handleChangeType = (e: React.ChangeEvent<HTMLSelectElement>) => {

@@ -1,20 +1,23 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { ReactNode } from 'react'
+import { JSX, ReactNode } from 'react'
 import AddRecordForm from '../../components/AddRecordForm'
 import { InitialAppState } from '../../data/data'
 import { ExpenseContext } from '../../hooks/useExpense'
 import { ExpenseDispatchContext } from '../../hooks/useExpenseDispatch'
 
 describe('AddRecordForm', () => {
+  let wrapper: ({ children }: { children: ReactNode }) => JSX.Element
   const mockDispatch = vi.fn()
 
-  const wrapper = ({ children }: { children: ReactNode }) => (
-    <ExpenseContext.Provider value={InitialAppState}>
-      <ExpenseDispatchContext.Provider value={mockDispatch}>
-        {children}
-      </ExpenseDispatchContext.Provider>
-    </ExpenseContext.Provider>
-  )
+  beforeEach(async () => {
+    wrapper = ({ children }: { children: ReactNode }) => (
+      <ExpenseContext.Provider value={InitialAppState}>
+        <ExpenseDispatchContext.Provider value={mockDispatch}>
+          {children}
+        </ExpenseDispatchContext.Provider>
+      </ExpenseContext.Provider>
+    )
+  })
 
   it('renders form fields', () => {
     render(<AddRecordForm />, { wrapper })
@@ -44,12 +47,12 @@ describe('AddRecordForm', () => {
       expect.objectContaining({
         type: 'add_record',
         record: expect.objectContaining({
-          amount: '100', // Check if the amount is correctly passed
-          type: expect.any(String), // Assuming type should be a string, you can make it more specific if needed
-          account: expect.any(String), // Same for account
-          category: expect.any(String), // Same for category
-          date: expect.any(String), // Check if a date is passed
-          id: expect.any(String), // If you're generating an ID (e.g., with uuidv4), make sure it's a string
+          amount: '100',
+          type: expect.any(String),
+          account: expect.any(String),
+          category: expect.any(String),
+          date: expect.any(String),
+          id: expect.any(String),
         }),
       })
     )
