@@ -1,5 +1,5 @@
+import TaskList from '@/components/TaskList'
 import { fireEvent, render, screen } from '@testing-library/react'
-import TaskList from '../../components/TaskList'
 
 describe('Task Component', () => {
   const mockOnChangeTodo = vi.fn()

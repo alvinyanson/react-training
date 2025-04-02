@@ -1,8 +1,8 @@
+import AddTodo from '@/components/AddTodo'
+import TaskList from '@/components/TaskList'
+import { initialTodos } from '@/data/dummyTodo'
+import { Todo } from '@/type/todo'
 import { useState } from 'react'
-import AddTodo from './components/AddTodo'
-import TaskList from './components/TaskList'
-import { Todo } from './types/todo'
-import { initialTodos } from './data/dummyTodo'
 
 function App() {
   const [todos, setTodos] = useState(initialTodos)

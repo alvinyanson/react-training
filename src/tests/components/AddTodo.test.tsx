@@ -1,5 +1,5 @@
+import AddTodo from '@/components/AddTodo'
 import { fireEvent, render, screen } from '@testing-library/react'
-import AddTodo from '../../components/AddTodo'
 
 describe('AddTodo Component', () => {
   it('renders input and button', () => {

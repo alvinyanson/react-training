@@ -1,5 +1,5 @@
+import { TaskItemProps } from '@/type/todo'
 import { useState } from 'react'
-import { TaskItemProps } from '../types/todo'
 
 function Task({ todo, onChangeTodo, onDeleteTodo }: TaskItemProps) {
   const [isEditing, setIsEditing] = useState(false)

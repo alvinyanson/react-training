@@ -1,4 +1,4 @@
-import { TaskListProps, Todo } from '../types/todo'
+import { TaskListProps, Todo } from '@/type/todo'
 import Task from './Task'
 
 function TaskList({ todos, onChangeTodo, onDeleteTodo }: TaskListProps) {

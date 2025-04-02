@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { AddTodoProps } from '../types/todo'
+import { AddTodoProps } from '@/type/todo'
 
 function AddTodo({ handleAddTodo }: AddTodoProps) {
   const [task, setTask] = useState('')
