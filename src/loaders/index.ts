@@ -1,5 +1,5 @@
 import { ActionFunctionArgs } from 'react-router-dom'
-import { getContact, getContacts } from '../services/contacts'
+import { getContact, getContacts } from '@/services/contacts'
 
 export async function GetContactLoader({ params }: ActionFunctionArgs) {
   const contact = await getContact(params.contactId)

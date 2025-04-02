@@ -1,5 +1,5 @@
 import { ActionFunctionArgs, redirect } from 'react-router-dom'
-import { createContact, deleteContact, updateContact } from '../services/contacts'
+import { createContact, deleteContact, updateContact } from '@/services/contacts'
 
 export async function CreateContactAction() {
   const contact = await createContact()

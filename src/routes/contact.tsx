@@ -1,5 +1,5 @@
 import { Form, useFetcher, useLoaderData } from 'react-router-dom'
-import { FavoriteProps } from '../types'
+import { FavoriteProps } from '@/type'
 
 export default function Contact() {
   const { contact } = useLoaderData()

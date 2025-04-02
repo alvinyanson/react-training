@@ -1,7 +1,7 @@
 import localforage from 'localforage'
 import { matchSorter } from 'match-sorter'
 import sortBy from 'sort-by'
-import { Contact } from '../types'
+import { Contact } from '@/type'
 
 export async function getContacts(query: string | null = null) {
   await fakeNetwork(`getContacts:${query}`)
