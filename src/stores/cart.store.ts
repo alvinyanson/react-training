@@ -1,7 +1,7 @@
 import { create } from 'zustand'
-import { Product } from '../types/product'
-import { CartItem } from '../types/cart.item'
-import { CartState } from './cart.state'
+import { Product } from '@/types/product'
+import { CartItem } from '@/types/cart.item'
+import { CartState } from '@/stores/cart.state'
 
 // the cart store, not exported, so that no one can subscribe to the entire store
 const useCartStore = create<CartState>((set) => ({

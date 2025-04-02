@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { fetchProducts } from '../api/product.service'
-import ProductCard from '../components/product-card'
-import { Product } from '../types/product'
+import { fetchProducts } from '@/api/product.service'
+import ProductCard from '@/components/product-card'
+import { Product } from '@/types/product'
 
 export const Route = createFileRoute('/')({
   component: Index,

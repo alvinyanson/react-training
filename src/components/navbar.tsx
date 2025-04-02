@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { useCartItems } from '../stores/cart.store'
+import { useCartItems } from '@/stores/cart.store'
 
 function Navbar() {
   const cartItems = useCartItems()

@@ -1,4 +1,4 @@
-import { ProductResponse, ProductsResponse } from '../types/product'
+import { ProductResponse, ProductsResponse } from '@/types/product'
 
 const BASE_URL = 'https://dummyjson.com'
 

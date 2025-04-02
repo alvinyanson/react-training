@@ -1,7 +1,7 @@
 import { useNavigate } from '@tanstack/react-router'
-import { useCartActions } from '../stores/cart.store'
-import { Product } from '../types/product'
-import { formatNumberWithCommas } from '../util'
+import { useCartActions } from '@/stores/cart.store'
+import { Product } from '@/types/product'
+import { formatNumberWithCommas } from '@/util'
 import { memo } from 'react'
 
 type ProductCardProps = {

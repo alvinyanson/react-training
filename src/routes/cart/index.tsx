@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useCartActions, useCartItems } from '../../stores/cart.store'
-import { formatNumberWithCommas } from '../../util'
+import { useCartActions, useCartItems } from '@/stores/cart.store'
+import { formatNumberWithCommas } from '@/util'
 import { useMemo } from 'react'
 
 export const Route = createFileRoute('/cart/')({
