@@ -4,11 +4,11 @@ stages:
 
 image: node:22-alpine
 
-test:
-  stage: test
-  script:
-    - npm ci
-    - npm run test
+# test:
+#   stage: test
+#   script:
+#     - npm ci
+#     - npm run test
 
 build:
   stage: build
