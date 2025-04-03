@@ -4,6 +4,8 @@ import { useCartItems } from '@/stores/cart.store'
 function Navbar() {
   const cartItems = useCartItems()
 
+  console.log('cartItems', cartItems)
+
   return (
     <>
       <nav
