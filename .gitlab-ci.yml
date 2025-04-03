@@ -2,6 +2,9 @@ stages:
   - test
   - build
 
+# Use Alpine-based Node.js 22 image
+image: node:22-alpine
+
 test:
   stage: test
   script:
