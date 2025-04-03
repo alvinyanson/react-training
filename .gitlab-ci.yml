@@ -1,0 +1,20 @@
+stages:
+  - test
+  - build
+
+image: node:22-alpine
+
+test:
+  stage: test
+  script:
+    - npm ci
+    - npm run test
+
+build:
+  stage: build
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
