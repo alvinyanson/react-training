@@ -6,11 +6,6 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [TanStackRouterVite({ target: 'react', autoCodeSplitting: true }), react()],
-  test: {
-    environment: 'jsdom',
-    globals: true,
-    setupFiles: ['./vitest-setup.ts'],
-  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
