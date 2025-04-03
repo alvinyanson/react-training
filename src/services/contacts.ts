@@ -1,9 +1,9 @@
+import { Contact } from '@/type'
 import localforage from 'localforage'
 import { matchSorter } from 'match-sorter'
 import sortBy from 'sort-by'
-import { Contact } from '@/type'
 
-export async function getContacts(query: string | null = null) {
+export async function getContacts(query: string | null = null): Promise<Contact[]> {
   await fakeNetwork(`getContacts:${query}`)
   let contacts: Contact[] | null = await localforage.getItem('contacts')
   if (!contacts) contacts = []
@@ -13,7 +13,7 @@ export async function getContacts(query: string | null = null) {
   return contacts.sort(sortBy('last', 'createdAt'))
 }
 
-export async function createContact() {
+export async function createContact(): Promise<Contact> {
   await fakeNetwork()
   const id = Math.random().toString(36).substring(2, 9)
   const contact = { id, createdAt: Date.now() }
@@ -23,7 +23,7 @@ export async function createContact() {
   return contact
 }
 
-export async function getContact(id: string | undefined) {
+export async function getContact(id: string | undefined): Promise<Contact | undefined | null> {
   await fakeNetwork(`contact:${id}`)
   const contacts: Contact[] | null = await localforage.getItem('contacts')
   if (contacts) {
@@ -32,7 +32,7 @@ export async function getContact(id: string | undefined) {
   return null
 }
 
-export async function updateContact(id: string | undefined, updates: Contact) {
+export async function updateContact(id: string | undefined, updates: Contact): Promise<Contact> {
   if (!id) throw new Error('Invalid contact ID')
 
   await fakeNetwork()
@@ -48,7 +48,7 @@ export async function updateContact(id: string | undefined, updates: Contact) {
   return contact
 }
 
-export async function deleteContact(id: string | undefined) {
+export async function deleteContact(id: string | undefined): Promise<boolean> {
   const contacts: Contact[] | null = await localforage.getItem('contacts')
   if (!contacts) throw new Error('No contacts found')
 
@@ -61,14 +61,14 @@ export async function deleteContact(id: string | undefined) {
   return false
 }
 
-function set(contacts: Contact[]) {
+function set(contacts: Contact[]): Promise<Contact[]> {
   return localforage.setItem('contacts', contacts)
 }
 
 // fake a cache so we don't slow down stuff we've already seen
 let fakeCache: Record<string, boolean> = {}
 
-async function fakeNetwork(key?: string) {
+async function fakeNetwork(key?: string): Promise<void> {
   if (!key) {
     fakeCache = {}
     return

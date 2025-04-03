@@ -21,3 +21,8 @@ export type Contact = {
 export type FavoriteProps = {
   contact: Contact
 }
+
+export interface ContactsLoaderData {
+  contacts: Contact[]
+  q: string
+}

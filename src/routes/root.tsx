@@ -1,15 +1,19 @@
+import { ContactsLoaderData } from '@/type'
 import { useEffect } from 'react'
 import { Form, NavLink, Outlet, useLoaderData, useNavigation, useSubmit } from 'react-router-dom'
 
 export default function Root() {
-  const { contacts, q } = useLoaderData()
+  const { contacts, q } = useLoaderData<ContactsLoaderData>()
   const navigation = useNavigation()
   const submit = useSubmit()
 
   const searching = navigation.location && new URLSearchParams(navigation.location.search).has('q')
 
   useEffect(() => {
-    document.getElementById('q').value = q
+    const element = document.getElementById('q') as HTMLInputElement
+    if (element) {
+      element.value = q
+    }
   }, [q])
 
   return (

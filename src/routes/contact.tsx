@@ -1,5 +1,5 @@
-import { Form, useFetcher, useLoaderData } from 'react-router-dom'
-import { FavoriteProps } from '@/type'
+import Favorite from '@/components/Favorite'
+import { Form, useLoaderData } from 'react-router-dom'
 
 export default function Contact() {
   const { contact } = useLoaderData()
@@ -53,23 +53,5 @@ export default function Contact() {
         </div>
       </div>
     </div>
-  )
-}
-
-function Favorite({ contact }: FavoriteProps) {
-  const fetcher = useFetcher()
-
-  const favorite = fetcher.formData ? fetcher.formData.get('favorite') === 'true' : contact.favorite
-
-  return (
-    <fetcher.Form method="post">
-      <button
-        name="favorite"
-        value={favorite ? 'false' : 'true'}
-        aria-label={favorite ? 'Remove from favorites' : 'Add to favorites'}
-      >
-        {favorite ? '★' : '☆'}
-      </button>
-    </fetcher.Form>
   )
 }
