@@ -1,0 +1,18 @@
+stages:
+  - test
+  - build
+
+test:
+  stage: test
+  script:
+    - npm ci
+    - npm run test
+
+build:
+  stage: build
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - dist/ # Adjust this path if your build outputs to a different directory
