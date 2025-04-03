@@ -9,7 +9,7 @@ function Navbar() {
       >
         <div className="container-fluid">
           {/* app name */}
-          <Link to="/" className="navbar-brand">
+          <Link to="/" search={{ page: 1 }} className="navbar-brand">
             Movie Watchlist
           </Link>
 
@@ -29,7 +29,7 @@ function Navbar() {
           {/* navigation links */}
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <Link to="/" className="nav-link text-decoration-none">
+              <Link to="/" search={{ page: 1 }} className="nav-link text-decoration-none">
                 Home
               </Link>
               <Link to="/watchlist" className="nav-link">
