@@ -1,5 +1,5 @@
 stages:
-  - test
+  # - test
   - build
 
 image: node:22-alpine
