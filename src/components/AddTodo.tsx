@@ -6,7 +6,7 @@ function AddTodo({ handleAddTodo }: AddTodoProps) {
 
   const handleSubmitTask = () => {
     if (!task) {
-      alert('Task name is required.')
+      alert('Task name is required...')
       return
     }
 
