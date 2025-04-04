@@ -3,7 +3,6 @@ import { Link } from '@tanstack/react-router'
 
 function Navbar() {
   const cartItems = useCartItems()
-
   return (
     <>
       <nav
