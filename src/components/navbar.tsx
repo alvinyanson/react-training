@@ -1,10 +1,8 @@
-import { Link } from '@tanstack/react-router'
 import { useCartItems } from '@/stores/cart.store'
+import { Link } from '@tanstack/react-router'
 
 function Navbar() {
   const cartItems = useCartItems()
-
-  console.log('cartItems', cartItems)
 
   return (
     <>
