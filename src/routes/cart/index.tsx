@@ -4,10 +4,10 @@ import { formatNumberWithCommas } from '@/util'
 import { useMemo } from 'react'
 
 export const Route = createFileRoute('/cart/')({
-  component: RouteComponent,
+  component: CartComponent,
 })
 
-function RouteComponent() {
+export function CartComponent() {
   const cartItems = useCartItems()
 
   const { increaseQty, decreaseQty, removeFromCart, checkout } = useCartActions()
@@ -48,7 +48,7 @@ function RouteComponent() {
                 <img
                   src={item.thumbnail}
                   className="img-thumbnail"
-                  alt="..."
+                  alt={item.name}
                   width={50}
                   height={50}
                 />
@@ -60,10 +60,16 @@ function RouteComponent() {
               <td>{formatNumberWithCommas(item.quantity * item.price)}</td>
               <td>
                 <div className="btn-group me-3" role="group" aria-label="Basic example">
-                  <button onClick={() => increaseQty(item)} type="button" className="btn btn-light">
+                  <button
+                    aria-label="add"
+                    onClick={() => increaseQty(item)}
+                    type="button"
+                    className="btn btn-light"
+                  >
                     +
                   </button>
                   <button
+                    aria-label="minus"
                     onClick={() => decreaseQty(item)}
                     type="button"
                     className="btn btn-light"

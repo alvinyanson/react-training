@@ -1,3 +1,5 @@
+import { CartItem } from '@/types/cart.item'
+
 export const mockProduct = {
   id: 28,
   title: 'Ice Cream',
@@ -58,3 +60,12 @@ export const mockProduct = {
   ],
   thumbnail: 'https://cdn.dummyjson.com/products/images/groceries/Ice%20Cream/thumbnail.png',
 }
+
+export const mockCartItem = {
+  id: mockProduct.id,
+  thumbnail: mockProduct.thumbnail,
+  name: mockProduct.title,
+  category: mockProduct.category,
+  price: mockProduct.price,
+  quantity: 2,
+} as CartItem

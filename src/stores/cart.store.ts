@@ -4,7 +4,7 @@ import { CartItem } from '@/types/cart.item'
 import { CartState } from '@/stores/cart.state'
 
 // the cart store, not exported, so that no one can subscribe to the entire store
-export const useCartStore = create<CartState>((set) => ({
+const useCartStore = create<CartState>((set) => ({
   cartItems: [],
   actions: {
     addToCart: (product: Product) =>
