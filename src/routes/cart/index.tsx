@@ -80,6 +80,7 @@ export function CartComponent() {
                 </div>
 
                 <button
+                  aria-label="remove"
                   onClick={() => removeFromCart(item)}
                   type="button"
                   className="btn btn-danger"
@@ -95,7 +96,7 @@ export function CartComponent() {
               <>
                 {/* total price of the cart */}
                 <td colSpan={7} className="text-end">
-                  <h4>{formatNumberWithCommas(totalPrice)}</h4>
+                  <h4 aria-label="total price">{formatNumberWithCommas(totalPrice)}</h4>
                 </td>
                 <td></td>
               </>
@@ -114,7 +115,7 @@ export function CartComponent() {
       {cartItems.length > 0 && (
         <>
           <br />
-          <button onClick={() => handleCheckout()} className="btn btn-dark">
+          <button aria-label="checkout" onClick={() => handleCheckout()} className="btn btn-dark">
             Checkout
           </button>
         </>
