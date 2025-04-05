@@ -21,7 +21,7 @@ describe('Home component', () => {
 
   it('should render the home component', () => {
     render(<RouterProvider router={router} />)
-
+    // TODO figure out how to render the home component here
     screen.debug()
   })
 })
