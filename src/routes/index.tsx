@@ -11,8 +11,6 @@ export const Route = createFileRoute('/')({
 export function HomeComponent() {
   const result = Route.useLoaderData()
 
-  console.log('******', result)
-
   return (
     <div className="p-2">
       <h3>Hello!</h3>
