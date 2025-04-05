@@ -3,13 +3,13 @@ import { fetchProductById } from '../../api/product.service'
 import { useCartActions } from '../../stores/cart.store'
 
 export const Route = createFileRoute('/items/$itemId')({
-  component: RouteComponent,
+  component: ItemDetailComponent,
   loader: async ({ params: { itemId } }) => {
     return await fetchProductById(Number(itemId))
   },
 })
 
-function RouteComponent() {
+export function ItemDetailComponent() {
   const product = Route.useLoaderData()
   const { addToCart } = useCartActions()
 

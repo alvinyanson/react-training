@@ -4,12 +4,14 @@ import ProductCard from '@/components/product-card'
 import { Product } from '@/types/product'
 
 export const Route = createFileRoute('/')({
-  component: Index,
+  component: HomeComponent,
   loader: () => fetchProducts(),
 })
 
-function Index() {
+export function HomeComponent() {
   const result = Route.useLoaderData()
+
+  console.log('******', result)
 
   return (
     <div className="p-2">
